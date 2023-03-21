@@ -2,6 +2,8 @@ use std::net::Ipv4Addr;
 
 use serde::{Deserialize, Serialize};
 
+pub const LOCATION: &str = "/tmp/pppoe.ip_config";
+
 #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IpConfig {
     pub addr: Ipv4Addr,
