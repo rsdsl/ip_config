@@ -36,6 +36,12 @@ impl Default for Ipv6Config {
     }
 }
 
+#[derive(Clone, Copy, Debug, Default, PartialEq, Serialize, Deserialize)]
+pub struct DsConfig {
+    pub v4: Option<Ipv4Config>,
+    pub v6: Option<Ipv6Config>,
+}
+
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Ipv6Lease {
     pub prefix: Ipv6Addr,
