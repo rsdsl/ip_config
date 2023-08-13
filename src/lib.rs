@@ -41,18 +41,3 @@ pub struct DsConfig {
     pub v4: Option<Ipv4Config>,
     pub v6: Option<Ipv6Config>,
 }
-
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct Ipv6Lease {
-    pub prefix: Ipv6Addr,
-    pub aftr: Option<String>,
-}
-
-impl Default for Ipv6Lease {
-    fn default() -> Self {
-        Self {
-            prefix: Ipv6Addr::UNSPECIFIED,
-            aftr: None,
-        }
-    }
-}
