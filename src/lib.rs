@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 pub const LOCATION: &str = "/tmp/pppoe.ip_config";
 
-#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Ipv4Config {
     pub addr: Ipv4Addr,
     pub dns1: Ipv4Addr,
@@ -21,7 +21,7 @@ impl Default for Ipv4Config {
     }
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize, Deserialize)]
 pub struct Ipv6Config {
     pub laddr: Ipv6Addr,
     pub raddr: Ipv6Addr,
@@ -36,7 +36,7 @@ impl Default for Ipv6Config {
     }
 }
 
-#[derive(Clone, Copy, Debug, Default, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, Default, Eq, PartialEq, Serialize, Deserialize)]
 pub struct DsConfig {
     pub v4: Option<Ipv4Config>,
     pub v6: Option<Ipv6Config>,
